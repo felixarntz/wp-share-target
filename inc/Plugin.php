@@ -14,7 +14,7 @@ namespace Felix_Arntz\WP_Image_Sharer;
  *
  * @since 1.0.0
  */
-class Plugin {
+class Plugin implements Registerable {
 
 	/**
 	 * Context instance for the plugin.
