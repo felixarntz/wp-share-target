@@ -36,8 +36,8 @@ function wp_image_sharer_load() {
 		return;
 	}
 
-	if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
-		require __DIR__ . '/vendor/autoload.php';
+	if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
+		require dirname( __FILE__ ) . '/vendor/autoload.php';
 	}
 
 	call_user_func( [ 'Felix_Arntz\\WP_Image_Sharer\\Plugin', 'load' ], __FILE__ );
