@@ -18,6 +18,12 @@ local.properties
 nbproject/
 
 ############
+## Build
+############
+
+build
+
+############
 ## Vendor
 ############
 

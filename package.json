@@ -1,0 +1,49 @@
+{
+  "name": "wp-image-sharer",
+  "version": "1.0.0",
+  "description": "Plugin to share images directly to a WordPress site via Web Share Target API.",
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "image",
+    "share",
+    "web",
+    "sharee",
+    "target",
+    "api",
+    "progressive",
+    "pwa"
+  ],
+  "author": {
+    "name": "Felix Arntz",
+    "email": "hello@felix-arntz.me",
+    "url": "https://felix-arntz.me"
+  },
+  "homepage": "https://wordpress.org/plugins/image-sharer/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/felixarntz/wp-image-sharer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/felixarntz/wp-image-sharer/issues"
+  },
+  "license": "GPL-2.0-or-later",
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "start": "wp-scripts start",
+    "test:e2e": "wp-scripts test-e2e",
+    "test:unit": "wp-scripts test-unit-js"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^6"
+  }
+}
