@@ -1,8 +1,8 @@
 [![WordPress plugin](https://img.shields.io/wordpress/plugin/v/image-sharer.svg?maxAge=2592000)](https://wordpress.org/plugins/image-sharer/)
 [![WordPress](https://img.shields.io/wordpress/v/image-sharer.svg?maxAge=2592000)](https://wordpress.org/plugins/image-sharer/)
-[![Build Status](https://api.travis-ci.org/felix-arntz/image-sharer.png?branch=master)](https://travis-ci.org/felix-arntz/image-sharer)
-[![Latest Stable Version](https://poser.pugx.org/felix-arntz/image-sharer/version)](https://packagist.org/packages/felix-arntz/image-sharer)
-[![License](https://poser.pugx.org/felix-arntz/image-sharer/license)](https://packagist.org/packages/felix-arntz/image-sharer)
+[![Build Status](https://api.travis-ci.org/felix-arntz/wp-image-sharer.png?branch=master)](https://travis-ci.org/felix-arntz/wp-image-sharer)
+[![Latest Stable Version](https://poser.pugx.org/felix-arntz/wp-image-sharer/version)](https://packagist.org/packages/felix-arntz/wp-image-sharer)
+[![License](https://poser.pugx.org/felix-arntz/wp-image-sharer/license)](https://packagist.org/packages/felix-arntz/wp-image-sharer)
 
 # Image Sharer
 

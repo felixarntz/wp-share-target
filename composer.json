@@ -1,5 +1,5 @@
 {
-  "name": "felix-arntz/image-sharer",
+  "name": "felix-arntz/wp-image-sharer",
   "description": "Plugin to share images directly to a WordPress site via Web Share Target API.",
   "version": "1.0.0",
   "license": "GPL-2.0-or-later",
