@@ -58,4 +58,15 @@ class Context {
 	public function url( string $relative_path = '/' ) : string {
 		return plugin_dir_url( $this->main_file ) . ltrim( $relative_path, '/' );
 	}
+
+	/**
+	 * Gets the URL that handles incoming share requests.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return string URL to handle share requests.
+	 */
+	public function share_url() : string {
+		return admin_url( '/share/' );
+	}
 }

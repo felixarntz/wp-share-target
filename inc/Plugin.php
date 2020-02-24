@@ -49,7 +49,8 @@ class Plugin implements Registerable {
 	 * @since 1.0.0
 	 */
 	public function register() {
-		// TODO: Add hooks here.
+		( new Web_App_Manifest( $this->context ) )->register();
+		( new Service_Worker( $this->context ) )->register();
 	}
 
 	/**
