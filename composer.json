@@ -5,6 +5,8 @@
   "license": "GPL-2.0-or-later",
   "type": "wordpress-plugin",
   "keywords": [
+    "wordpress",
+    "plugin",
     "image",
     "share",
     "web",
@@ -27,7 +29,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Felix_Arntz\\WP_Image_Sharer\\": "src"
+      "Felix_Arntz\\WP_Image_Sharer\\": "inc"
     }
   },
   "autoload-dev": {
@@ -50,7 +52,7 @@
   "scripts": {
     "phplint": "find -L .  -path ./vendor -prune -o -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l",
     "phpcs": "@php ./vendor/bin/phpcs",
-    "phpmd": "@php ./vendor/bin/phpmd src text phpmd.xml.dist",
+    "phpmd": "@php ./vendor/bin/phpmd inc text phpmd.xml.dist",
     "phpunit": "@php ./vendor/bin/phpunit",
     "phpunit-cov": "@php ./vendor/bin/phpunit --coverage-clover tests/logs/clover.xml",
     "phpunit-integration": "@php ./vendor/bin/phpunit -c phpunit-integration.xml.dist",

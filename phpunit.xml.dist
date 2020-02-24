@@ -23,7 +23,7 @@
 
     <filter>
         <whitelist>
-            <directory>./src</directory>
+            <directory>./inc</directory>
         </whitelist>
     </filter>
 </phpunit>

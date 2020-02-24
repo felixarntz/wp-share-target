@@ -3,7 +3,7 @@
     <description>Ruleset for a WordPress plugin.</description>
 
     <file>./image-sharer.php</file>
-    <file>./src</file>
+    <file>./inc</file>
 
     <exclude-pattern type="relative">^/vendor/*</exclude-pattern>
 
