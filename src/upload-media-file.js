@@ -4,6 +4,12 @@
 import { uploadMedia } from '@wordpress/media-utils';
 import { __ } from '@wordpress/i18n';
 
+/**
+ * Uploads a media file to WordPress and returns the attachment for it.
+ *
+ * @param {string} file Uploaded file identifier.
+ * @return {Object} WordPress attachment object.
+ */
 export default async ( file ) => {
 	let attachment;
 

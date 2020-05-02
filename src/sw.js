@@ -1,5 +1,12 @@
 /* global SHARE_URL, SHARE_REDIRECT_URL */
 
+/**
+ * Listens to a share event and sends data to the client via postMessage.
+ *
+ * This script is injected into the service worker.
+ *
+ * @param {Object} event Fetch event data.
+ */
 self.addEventListener( 'fetch', async (event) => {
 	if ( event.request.method !== 'POST' ) {
 		return;

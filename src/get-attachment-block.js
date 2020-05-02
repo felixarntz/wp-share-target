@@ -8,6 +8,16 @@ import { startsWith } from 'lodash';
  */
 import { __ } from '@wordpress/i18n';
 
+/**
+ * Returns block definition based on the attachment passed.
+ *
+ * If it is an audio file, a 'core/audio' block is used.
+ * If it is an image file, a 'core/image' block is used.
+ * If it is a video file, a 'core/video' block is used.
+ *
+ * @param {Object} attachment WordPress attachment object.
+ * @return {Object} Object with block definition, with `name` and `attributes` properties.
+ */
 export default ( attachment ) => {
 	if ( startsWith( attachment.type, 'audio/' ) ) {
 		return {
