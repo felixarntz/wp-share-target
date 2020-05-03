@@ -1,14 +1,21 @@
 /**
  * External dependencies
  */
-const path = require( 'path' );
+const CopyPlugin = require( 'copy-webpack-plugin' );
 
 /**
  * WordPress dependencies
  */
 const config = require( '@wordpress/scripts/config/webpack.config.js' );
 
-// Extra entry point for service worker script.
-config.entry.sw = path.resolve( process.cwd(), 'src', 'sw.js' );
+if ( ! config.plugins ) {
+	config.plugins = [];
+}
+
+config.plugins.push( new CopyPlugin( [
+	{
+		from: 'src/sw.js',
+	}
+] ) );
 
 module.exports = config;

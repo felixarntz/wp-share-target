@@ -44,6 +44,7 @@
     "test:unit": "wp-scripts test-unit-js"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^6"
+    "@wordpress/scripts": "^6",
+    "copy-webpack-plugin": "^5"
   }
 }
