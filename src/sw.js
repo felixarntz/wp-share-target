@@ -16,7 +16,7 @@ self.addEventListener( 'fetch', async (event) => {
 		return;
 	}
 
-	event.respondWith( Response.redirect( SHARE_REDIRECT_URL ) );
+	event.respondWith( Response.redirect( SHARE_REDIRECT_URL, 303 ) );
 
 	event.waitUntil( async () => {
 		const data = await event.request.formData();
