@@ -23,12 +23,11 @@ import getAttachmentBlock from './get-attachment-block';
  * @return {boolean} True if the share data was handled, false otherwise.
  */
 export default ( { title, description, link, attachment } ) => {
-	const { editPost, insertBlocks } = dispatch( 'core/editor' );
 	const blocks = [];
 
 	// If a title is passed, set the post title.
 	if ( title ) {
-		editPost( { title } );
+		dispatch( 'core/editor' ).editPost( { title } );
 	}
 
 	// If an attachment was created from a media file passed, include it in the content.
@@ -56,7 +55,7 @@ export default ( { title, description, link, attachment } ) => {
 	}
 
 	if ( blocks.length ) {
-		insertBlocks( { blocks } );
+		dispatch( 'core/block-editor' ).insertBlocks( { blocks } );
 	}
 
 	return true;
