@@ -55,7 +55,7 @@ class Service_Worker implements Registerable {
 	 */
 	public function register_service_worker_scripts( WP_Service_Worker_Scripts $scripts ) {
 		$scripts->register(
-			'image_sharer_handler',
+			'image-sharer-sw',
 			array(
 				'src' => function() {
 					$redirect_url = admin_url( 'post-new.php' );
