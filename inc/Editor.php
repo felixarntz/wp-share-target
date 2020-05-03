@@ -50,6 +50,13 @@ class Editor implements Registerable {
 	 * @since 1.0.0
 	 */
 	public function enqueue_share_handler_script() {
+		global $hook_suffix;
+
+		// Only enqueue if this is for a new post.
+		if ( 'post-new.php' !== $hook_suffix ) {
+			return;
+		}
+
 		$script_data = require $this->context->path( 'build/index.asset.php' );
 
 		wp_enqueue_script(
