@@ -33,8 +33,8 @@ export default ( { title, description, link, attachment } ) => {
 	// If an attachment was created from a media file passed, include it in the content.
 	if ( attachment ) {
 		try {
-			const block = getAttachmentBlock( attachment );
-			blocks.push( createBlock( block.name, block.attributes ) );
+			const { name, attributes } = getAttachmentBlock( attachment );
+			blocks.push( createBlock( name, attributes ) );
 		} catch ( error ) {
 			console.error( error.message ); // eslint-disable-line no-console
 		}
@@ -55,7 +55,7 @@ export default ( { title, description, link, attachment } ) => {
 	}
 
 	if ( blocks.length ) {
-		dispatch( 'core/block-editor' ).insertBlocks( { blocks } );
+		dispatch( 'core/block-editor' ).insertBlocks( blocks );
 	}
 
 	return true;
