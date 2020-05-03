@@ -59,8 +59,8 @@ class Service_Worker implements Registerable {
 			array(
 				'src' => function() {
 					$replacements = array(
-						'SHARE_URL'          => $this->context->share_url(),
-						'SHARE_REDIRECT_URL' => admin_url( 'post-new.php' ),
+						'SHARE_URL'          => "'" . $this->context->share_url() . "'",
+						'SHARE_REDIRECT_URL' => "'" . admin_url( 'post-new.php' ) . "'",
 					);
 
 					$script = file_get_contents( $this->context->path( 'build/sw.js' ) );
