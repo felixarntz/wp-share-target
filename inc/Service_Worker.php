@@ -67,7 +67,7 @@ class Service_Worker implements Registerable {
 					$script = preg_replace( '#/\*\s*global.+?\*/#s', '', $script );
 
 					return preg_replace_callback(
-						'/\b(' . implode( '|', array_keys( $this->replacements ) ) . ')\b/',
+						'/\b(' . implode( '|', array_keys( $replacements ) ) . ')\b/',
 						function( array $matches ) use ( $replacements ) : string {
 							if ( isset( $replacements[ $matches[0] ] ) ) {
 								return $replacements[ $matches[0] ];
