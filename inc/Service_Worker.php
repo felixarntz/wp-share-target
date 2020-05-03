@@ -58,20 +58,9 @@ class Service_Worker implements Registerable {
 			'image-sharer-sw',
 			array(
 				'src' => function() {
-					$redirect_url = admin_url( 'post-new.php' );
-
-					/**
-					 * Filters the URL to redirect to after processing a share request.
-					 *
-					 * @since 1.0.0
-					 *
-					 * @param string $redirect_url Full redirect URL. Default is the 'wp-admin/post-new.php' URL.
-					 */
-					$redirect_url = apply_filters( 'image_sharer_redirect_url', $redirect_url );
-
 					$replacements = array(
 						'SHARE_URL'          => $this->context->share_url(),
-						'SHARE_REDIRECT_URL' => $redirect_url,
+						'SHARE_REDIRECT_URL' => admin_url( 'post-new.php' ),
 					);
 
 					$script = file_get_contents( $this->context->path( 'build/sw.js' ) );
