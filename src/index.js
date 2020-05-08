@@ -20,7 +20,7 @@ const receivePostMessage = async ( event ) => {
 	let attachment;
 
 	// If a media file is passed, upload it and get the attachment.
-	if ( event.data.file ) {
+	if ( event.data.file && event.data.file.name ) {
 		try {
 			attachment = await uploadMediaFile( event.data.file );
 		} catch ( error ) {
@@ -32,5 +32,15 @@ const receivePostMessage = async ( event ) => {
 };
 
 if ( navigator.serviceWorker ) {
+	( async () => {
+		const registration = await navigator.serviceWorker.ready;
+
+		if ( registration.active ) {
+			registration.active.postMessage( {
+				action: 'receive_image_sharer_share',
+			} );
+		}
+	} )();
+
 	navigator.serviceWorker.addEventListener( 'message', receivePostMessage );
 }

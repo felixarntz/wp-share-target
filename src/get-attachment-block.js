@@ -19,7 +19,7 @@ import { __ } from '@wordpress/i18n';
  * @return {Object} Object with block definition, with `name` and `attributes` properties.
  */
 export default ( attachment ) => {
-	if ( startsWith( attachment.type, 'audio/' ) ) {
+	if ( startsWith( attachment.mime_type, 'audio/' ) ) {
 		return {
 			name: 'core/audio',
 			attributes: {
@@ -30,7 +30,7 @@ export default ( attachment ) => {
 		};
 	}
 
-	if ( startsWith( attachment.type, 'image/' ) ) {
+	if ( startsWith( attachment.mime_type, 'image/' ) ) {
 		return {
 			name: 'core/image',
 			attributes: {
@@ -44,7 +44,7 @@ export default ( attachment ) => {
 		};
 	}
 
-	if ( startsWith( attachment.type, 'video/' ) ) {
+	if ( startsWith( attachment.mime_type, 'video/' ) ) {
 		return {
 			name: 'core/video',
 			attributes: {
@@ -56,6 +56,6 @@ export default ( attachment ) => {
 	}
 
 	throw {
-		message: __( 'Unsupported attachment type.', 'image-sharer' ),
+		message: __( 'Unsupported attachment MIME type.', 'image-sharer' ),
 	};
 };
