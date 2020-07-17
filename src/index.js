@@ -2,10 +2,20 @@
  * Internal dependencies
  */
 import uploadMediaFile from './upload-media-file';
-import handleShareDefault from './handle-share-default';
+import createShareTargetAPI from './create-share-target-api';
+
+// Create shareTarget API object and assign to `wp` global.
+const shareTarget = createShareTargetAPI();
+if ( ! global.wp ) {
+	global.wp = {};
+}
+if ( ! global.wp.shareTarget ) {
+	global.wp.shareTarget = shareTarget;
+}
 
 /**
- * Handles the postMessage event with 'image_sharer_share' action which is dispatched from the service worker.
+ * Handles the postMessage event with 'image_sharer_share' action which is
+ * dispatched from the service worker.
  *
  * @param {Object} event Event with relevant data in the `data` property.
  */
@@ -21,14 +31,10 @@ const receivePostMessage = async ( event ) => {
 
 	// If a media file is passed, upload it and get the attachment.
 	if ( event.data.file && event.data.file.name ) {
-		try {
-			attachment = await uploadMediaFile( event.data.file );
-		} catch ( error ) {
-			console.error( error.message ); // eslint-disable-line no-console
-		}
+		attachment = await uploadMediaFile( event.data.file );
 	}
 
-	handleShareDefault( { title, description, link, attachment } );
+	await shareTarget.handleShare( { title, description, link, attachment } );
 };
 
 if ( navigator.serviceWorker ) {

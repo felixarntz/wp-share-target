@@ -15,14 +15,17 @@ import getAttachmentBlock from './get-attachment-block';
  * This is the default handler that will be used if no other (custom) one
  * already handled the data.
  *
- * @param {Object} options
- * @param {(string|undefined)} options.title       Text shared as "title", if provided.
- * @param {(string|undefined)} options.description Text shared as "description", if provided.
- * @param {(string|undefined)} options.link        URL shared, if provided.
- * @param {(Object|undefined)} options.attachment  WordPress attachment object, if media file provided.
- * @return {boolean} True if the share data was handled, false otherwise.
+ * @param {Object} data               Shared data.
+ * @param {string} [data.title]       Text shared as "title", if provided.
+ * @param {string} [data.description] Text shared as "description", if
+ *                                    provided.
+ * @param {string} [data.link]        URL shared, if provided.
+ * @param {Object} [data.attachment]  WordPress attachment object, if media
+ *                                    file provided.
+ * @return {Promise} Promise which resolves to true if the share data was
+ *                   handled, or to false otherwise.
  */
-export default ( { title, description, link, attachment } ) => {
+const handleShareDefault = async ( { title, description, link, attachment } ) => {
 	const blocks = [];
 
 	// If a title is passed, set the post title.
@@ -60,3 +63,5 @@ export default ( { title, description, link, attachment } ) => {
 
 	return true;
 };
+
+export default handleShareDefault;

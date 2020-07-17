@@ -10,7 +10,7 @@ import { __ } from '@wordpress/i18n';
  * @param {Object} file Uploaded file object.
  * @return {Object} WordPress attachment object.
  */
-export default async ( file ) => {
+const uploadMediaFile = async ( file ) => {
 	let attachment;
 
 	await uploadMedia( {
@@ -35,3 +35,5 @@ export default async ( file ) => {
 
 	return attachment;
 };
+
+export default uploadMediaFile;

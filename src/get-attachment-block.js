@@ -16,9 +16,10 @@ import { __ } from '@wordpress/i18n';
  * If it is a video file, a 'core/video' block is used.
  *
  * @param {Object} attachment WordPress attachment object.
- * @return {Object} Object with block definition, with `name` and `attributes` properties.
+ * @return {Object} Object with block definition, with `name` and `attributes`
+ *                  properties.
  */
-export default ( attachment ) => {
+const getAttachmentBlock = ( attachment ) => {
 	if ( startsWith( attachment.mime_type, 'audio/' ) ) {
 		return {
 			name: 'core/audio',
@@ -59,3 +60,5 @@ export default ( attachment ) => {
 		message: __( 'Unsupported attachment MIME type.', 'image-sharer' ),
 	};
 };
+
+export default getAttachmentBlock;
