@@ -2,20 +2,20 @@
 /**
  * Plugin initialization file
  *
- * @package Felix_Arntz\WP_Image_Sharer
+ * @package Felix_Arntz\WP_Share_Target
  * @license GNU General Public License v2 (or later)
- * @link    https://wordpress.org/plugins/image-sharer/
+ * @link    https://wordpress.org/plugins/share-target/
  *
  * @wordpress-plugin
- * Plugin Name: Image Sharer
- * Plugin URI:  https://wordpress.org/plugins/image-sharer/
- * Description: Plugin to share images directly to a WordPress site via Web Share Target API.
+ * Plugin Name: Share Target
+ * Plugin URI:  https://wordpress.org/plugins/share-target/
+ * Description: Plugin to share images and other media directly to a WordPress site via Web Share Target API.
  * Version:     1.0.0
  * Author:      Felix Arntz
  * Author URI:  https://felix-arntz.me
  * License:     GNU General Public License v2 (or later)
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: image-sharer
+ * Text Domain: share-target
  */
 
 /* This file must be parseable by PHP 5.2. */
@@ -25,14 +25,14 @@
  *
  * @since 1.0.0
  */
-function wp_image_sharer_load() {
+function wp_share_target_load() {
 	if ( version_compare( phpversion(), '7.0', '<' ) ) {
-		add_action( 'admin_notices', 'wp_image_sharer_display_php_version_notice' );
+		add_action( 'admin_notices', 'wp_share_target_display_php_version_notice' );
 		return;
 	}
 
 	if ( version_compare( get_bloginfo( 'version' ), '5.0', '<' ) ) {
-		add_action( 'admin_notices', 'wp_image_sharer_display_wp_version_notice' );
+		add_action( 'admin_notices', 'wp_share_target_display_wp_version_notice' );
 		return;
 	}
 
@@ -40,7 +40,7 @@ function wp_image_sharer_load() {
 		require dirname( __FILE__ ) . '/vendor/autoload.php';
 	}
 
-	call_user_func( [ 'Felix_Arntz\\WP_Image_Sharer\\Plugin', 'load' ], __FILE__ );
+	call_user_func( [ 'Felix_Arntz\\WP_Share_Target\\Plugin', 'load' ], __FILE__ );
 }
 
 /**
@@ -48,14 +48,14 @@ function wp_image_sharer_load() {
  *
  * @since 1.0.0
  */
-function wp_image_sharer_display_php_version_notice() {
+function wp_share_target_display_php_version_notice() {
 	?>
 	<div class="notice notice-error">
 		<p>
 			<?php
 			sprintf(
 				/* translators: 1: required version, 2: currently used version */
-				__( 'Image Sharer requires at least PHP version %1$s. Your site is currently running on PHP %2$s.', 'image-sharer' ),
+				__( 'Share Target requires at least PHP version %1$s. Your site is currently running on PHP %2$s.', 'share-target' ),
 				'7.0',
 				phpversion()
 			);
@@ -70,14 +70,14 @@ function wp_image_sharer_display_php_version_notice() {
  *
  * @since 1.0.0
  */
-function wp_image_sharer_display_wp_version_notice() {
+function wp_share_target_display_wp_version_notice() {
 	?>
 	<div class="notice notice-error">
 		<p>
 			<?php
 			sprintf(
 				/* translators: 1: required version, 2: currently used version */
-				__( 'Image Sharer requires at least WordPress version %1$s. Your site is currently running on WordPress %2$s.', 'image-sharer' ),
+				__( 'Share Target requires at least WordPress version %1$s. Your site is currently running on WordPress %2$s.', 'share-target' ),
 				'5.0',
 				get_bloginfo( 'version' )
 			);
@@ -87,4 +87,4 @@ function wp_image_sharer_display_wp_version_notice() {
 	<?php
 }
 
-wp_image_sharer_load();
+wp_share_target_load();

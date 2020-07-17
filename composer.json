@@ -1,6 +1,6 @@
 {
-  "name": "felix-arntz/wp-image-sharer",
-  "description": "Plugin to share images directly to a WordPress site via Web Share Target API.",
+  "name": "felix-arntz/wp-share-target",
+  "description": "Plugin to share images and other media directly to a WordPress site via Web Share Target API.",
   "version": "1.0.0",
   "license": "GPL-2.0-or-later",
   "type": "wordpress-plugin",
@@ -8,15 +8,16 @@
     "wordpress",
     "plugin",
     "image",
-    "share",
+    "media",
+    "sharing",
     "web",
-    "sharee",
+    "share",
     "target",
     "api",
     "progressive",
     "pwa"
   ],
-  "homepage": "https://wordpress.org/plugins/image-sharer/",
+  "homepage": "https://wordpress.org/plugins/share-target/",
   "authors": [
     {
       "name": "Felix Arntz",
@@ -25,16 +26,16 @@
     }
   ],
   "support": {
-    "issues": "https://github.com/felix-arntz/wp-image-sharer/issues"
+    "issues": "https://github.com/felix-arntz/wp-share-target/issues"
   },
   "autoload": {
     "psr-4": {
-      "Felix_Arntz\\WP_Image_Sharer\\": "inc"
+      "Felix_Arntz\\WP_Share_Target\\": "inc"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Felix_Arntz\\WP_Image_Sharer\\Tests\\PHPUnit\\Framework\\": "tests/phpunit/framework"
+      "Felix_Arntz\\WP_Share_Target\\Tests\\PHPUnit\\Framework\\": "tests/phpunit/framework"
     }
   },
   "require": {

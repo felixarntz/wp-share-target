@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # main config
-PLUGINSLUG="image-sharer"
+PLUGINSLUG="share-target"
 CURRENTDIR=`pwd`
 MAINFILE="$PLUGINSLUG.php" # This should be the name of your main php file in the WordPress plugin
 DEFAULT_EDITOR="/usr/bin/vim"

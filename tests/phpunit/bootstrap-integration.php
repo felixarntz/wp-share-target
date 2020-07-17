@@ -2,9 +2,9 @@
 /**
  * Integration tests bootstrap script.
  *
- * @package Felix_Arntz\WP_Image_Sharer
+ * @package Felix_Arntz\WP_Share_Target
  * @license GNU General Public License v2 (or later)
- * @link    https://wordpress.org/plugins/image-sharer/
+ * @link    https://wordpress.org/plugins/share-target/
  */
 
 // Detect project directory.
@@ -59,7 +59,7 @@ if ( ! file_exists( $test_root . '/includes/phpunit6-compat.php' ) && class_exis
 
 // Ensure the plugin is loaded.
 $GLOBALS['wp_tests_options'] = array(
-	'active_plugins' => array( basename( TESTS_PLUGIN_DIR ) . '/image-sharer.php' ),
+	'active_plugins' => array( basename( TESTS_PLUGIN_DIR ) . '/share-target.php' ),
 );
 
 // Load the WordPress tests environment.

@@ -1,13 +1,13 @@
 <?php
 /**
- * Class Felix_Arntz\WP_Image_Sharer\Service_Worker
+ * Class Felix_Arntz\WP_Share_Target\Service_Worker
  *
- * @package Felix_Arntz\WP_Image_Sharer
+ * @package Felix_Arntz\WP_Share_Target
  * @license GNU General Public License v2 (or later)
- * @link    https://wordpress.org/plugins/image-sharer/
+ * @link    https://wordpress.org/plugins/share-target/
  */
 
-namespace Felix_Arntz\WP_Image_Sharer;
+namespace Felix_Arntz\WP_Share_Target;
 
 use WP_Service_Worker_Scripts;
 
@@ -55,7 +55,7 @@ class Service_Worker implements Registerable {
 	 */
 	public function register_service_worker_scripts( WP_Service_Worker_Scripts $scripts ) {
 		$scripts->register(
-			'image-sharer-sw',
+			'share-target-sw',
 			array(
 				'src' => function() {
 					$replacements = array(

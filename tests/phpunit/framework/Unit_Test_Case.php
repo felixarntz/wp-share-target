@@ -1,13 +1,13 @@
 <?php
 /**
- * Class Felix_Arntz\WP_Image_Sharer\Tests\PHPUnit\Framework\Unit_Test_Case
+ * Class Felix_Arntz\WP_Share_Target\Tests\PHPUnit\Framework\Unit_Test_Case
  *
- * @package Felix_Arntz\WP_Image_Sharer
+ * @package Felix_Arntz\WP_Share_Target
  * @license GNU General Public License v2 (or later)
- * @link    https://wordpress.org/plugins/image-sharer/
+ * @link    https://wordpress.org/plugins/share-target/
  */
 
-namespace Felix_Arntz\WP_Image_Sharer\Tests\PHPUnit\Framework;
+namespace Felix_Arntz\WP_Share_Target\Tests\PHPUnit\Framework;
 
 use PHPUnit\Framework\TestCase;
 use Brain\Monkey;

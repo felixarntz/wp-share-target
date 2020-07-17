@@ -57,7 +57,7 @@ const getAttachmentBlock = ( attachment ) => {
 	}
 
 	throw {
-		message: __( 'Unsupported attachment MIME type.', 'image-sharer' ),
+		message: __( 'Unsupported attachment MIME type.', 'share-target' ),
 	};
 };
 

@@ -43,7 +43,7 @@ self.addEventListener( 'fetch', async ( fetchEvent ) => {
 	 * @param {Object} messageEvent Message event data.
 	 */
 	const sendSharePostMessage = async ( messageEvent ) => {
-		if ( 'receive_image_sharer_share' !== messageEvent.data.action ) {
+		if ( 'receive_wp_share_target_share' !== messageEvent.data.action ) {
 			return;
 		}
 
@@ -55,7 +55,7 @@ self.addEventListener( 'fetch', async ( fetchEvent ) => {
 
 		// Send postMessage to the client.
 		client.postMessage( {
-			action: 'image_sharer_share',
+			action: 'wp_share_target_share',
 			title,
 			description,
 			link,

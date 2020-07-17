@@ -1,13 +1,13 @@
 <?php
 /**
- * Class Felix_Arntz\WP_Image_Sharer\Context
+ * Class Felix_Arntz\WP_Share_Target\Context
  *
- * @package Felix_Arntz\WP_Image_Sharer
+ * @package Felix_Arntz\WP_Share_Target
  * @license GNU General Public License v2 (or later)
- * @link    https://wordpress.org/plugins/image-sharer/
+ * @link    https://wordpress.org/plugins/share-target/
  */
 
-namespace Felix_Arntz\WP_Image_Sharer;
+namespace Felix_Arntz\WP_Share_Target;
 
 /**
  * Class representing the context in which the plugin is running.

@@ -1,13 +1,13 @@
 <?php
 /**
- * Class Felix_Arntz\WP_Image_Sharer\Editor
+ * Class Felix_Arntz\WP_Share_Target\Editor
  *
- * @package Felix_Arntz\WP_Image_Sharer
+ * @package Felix_Arntz\WP_Share_Target
  * @license GNU General Public License v2 (or later)
- * @link    https://wordpress.org/plugins/image-sharer/
+ * @link    https://wordpress.org/plugins/share-target/
  */
 
-namespace Felix_Arntz\WP_Image_Sharer;
+namespace Felix_Arntz\WP_Share_Target;
 
 /**
  * Class integrating with the editor.
@@ -60,12 +60,12 @@ class Editor implements Registerable {
 		$script_data = require $this->context->path( 'build/index.asset.php' );
 
 		wp_enqueue_script(
-			'image-sharer',
+			'share-target',
 			$this->context->url( 'build/index.js' ),
 			$script_data['dependencies'],
 			$script_data['version'],
 			true
 		);
-		wp_set_script_translations( 'image-sharer', 'image-sharer' );
+		wp_set_script_translations( 'share-target', 'share-target' );
 	}
 }

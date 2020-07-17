@@ -1,15 +1,15 @@
 <?php
 /**
- * Class Felix_Arntz\WP_Image_Sharer\Tests\PHPUnit\Unit\Sample_Tests
+ * Class Felix_Arntz\WP_Share_Target\Tests\PHPUnit\Unit\Sample_Tests
  *
- * @package Felix_Arntz\WP_Image_Sharer
+ * @package Felix_Arntz\WP_Share_Target
  * @license GNU General Public License v2 (or later)
- * @link    https://wordpress.org/plugins/image-sharer/
+ * @link    https://wordpress.org/plugins/share-target/
  */
 
-namespace Felix_Arntz\WP_Image_Sharer\Tests\PHPUnit\Unit;
+namespace Felix_Arntz\WP_Share_Target\Tests\PHPUnit\Unit;
 
-use Felix_Arntz\WP_Image_Sharer\Tests\PHPUnit\Framework\Unit_Test_Case;
+use Felix_Arntz\WP_Share_Target\Tests\PHPUnit\Framework\Unit_Test_Case;
 
 /**
  * Class containing a sample test.

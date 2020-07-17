@@ -1,14 +1,15 @@
 {
-  "name": "wp-image-sharer",
+  "name": "wp-share-target",
   "version": "1.0.0",
-  "description": "Plugin to share images directly to a WordPress site via Web Share Target API.",
+  "description": "Plugin to share images and other media directly to a WordPress site via Web Share Target API.",
   "keywords": [
     "wordpress",
     "plugin",
     "image",
-    "share",
+    "media",
+    "sharing",
     "web",
-    "sharee",
+    "share",
     "target",
     "api",
     "progressive",
@@ -19,13 +20,13 @@
     "email": "hello@felix-arntz.me",
     "url": "https://felix-arntz.me"
   },
-  "homepage": "https://wordpress.org/plugins/image-sharer/",
+  "homepage": "https://wordpress.org/plugins/share-target/",
   "repository": {
     "type": "git",
-    "url": "git://github.com/felixarntz/wp-image-sharer.git"
+    "url": "git://github.com/felixarntz/wp-share-target.git"
   },
   "bugs": {
-    "url": "https://github.com/felixarntz/wp-image-sharer/issues"
+    "url": "https://github.com/felixarntz/wp-share-target/issues"
   },
   "license": "GPL-2.0-or-later",
   "engines": {

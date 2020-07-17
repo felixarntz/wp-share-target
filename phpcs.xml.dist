@@ -2,7 +2,7 @@
 <ruleset name="WordPress Plugin">
     <description>Ruleset for a WordPress plugin.</description>
 
-    <file>./image-sharer.php</file>
+    <file>./share-target.php</file>
     <file>./inc</file>
 
     <exclude-pattern type="relative">^/vendor/*</exclude-pattern>
@@ -19,7 +19,7 @@
     <!-- Selected WordPress Coding Standards tweaks -->
     <rule ref="WordPress.WP.I18n">
         <properties>
-            <property name="text_domain" type="string" value="image-sharer"/>
+            <property name="text_domain" type="string" value="share-target"/>
         </properties>
     </rule>
 </ruleset>

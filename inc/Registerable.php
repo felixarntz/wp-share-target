@@ -1,13 +1,13 @@
 <?php
 /**
- * Interface Felix_Arntz\WP_Image_Sharer\Registerable
+ * Interface Felix_Arntz\WP_Share_Target\Registerable
  *
- * @package Felix_Arntz\WP_Image_Sharer
+ * @package Felix_Arntz\WP_Share_Target
  * @license GNU General Public License v2 (or later)
- * @link    https://wordpress.org/plugins/image-sharer/
+ * @link    https://wordpress.org/plugins/share-target/
  */
 
-namespace Felix_Arntz\WP_Image_Sharer;
+namespace Felix_Arntz\WP_Share_Target;
 
 /**
  * Interface for a class that has registerable functionality.

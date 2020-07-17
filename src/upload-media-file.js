@@ -29,7 +29,7 @@ const uploadMediaFile = async ( file ) => {
 
 	if ( ! attachment || ! attachment.id ) {
 		throw {
-			message: __( 'Unknown upload error.', 'image-sharer' ),
+			message: __( 'Unknown upload error.', 'share-target' ),
 		};
 	}
 

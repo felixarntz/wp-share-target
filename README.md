@@ -1,12 +1,12 @@
-[![WordPress plugin](https://img.shields.io/wordpress/plugin/v/image-sharer.svg?maxAge=2592000)](https://wordpress.org/plugins/image-sharer/)
-[![WordPress](https://img.shields.io/wordpress/v/image-sharer.svg?maxAge=2592000)](https://wordpress.org/plugins/image-sharer/)
-[![Build Status](https://api.travis-ci.org/felix-arntz/wp-image-sharer.png?branch=master)](https://travis-ci.org/felix-arntz/wp-image-sharer)
-[![Latest Stable Version](https://poser.pugx.org/felix-arntz/wp-image-sharer/version)](https://packagist.org/packages/felix-arntz/wp-image-sharer)
-[![License](https://poser.pugx.org/felix-arntz/wp-image-sharer/license)](https://packagist.org/packages/felix-arntz/wp-image-sharer)
+[![WordPress plugin](https://img.shields.io/wordpress/plugin/v/share-target.svg?maxAge=2592000)](https://wordpress.org/plugins/share-target/)
+[![WordPress](https://img.shields.io/wordpress/v/share-target.svg?maxAge=2592000)](https://wordpress.org/plugins/share-target/)
+[![Build Status](https://api.travis-ci.org/felix-arntz/wp-share-target.png?branch=master)](https://travis-ci.org/felix-arntz/wp-share-target)
+[![Latest Stable Version](https://poser.pugx.org/felix-arntz/wp-share-target/version)](https://packagist.org/packages/felix-arntz/wp-share-target)
+[![License](https://poser.pugx.org/felix-arntz/wp-share-target/license)](https://packagist.org/packages/felix-arntz/wp-share-target)
 
-# Image Sharer
+# Share Target
 
-Plugin to share images directly to a WordPress site via Web Share Target API.
+Plugin to share images and other media directly to a WordPress site via Web Share Target API.
 
 ## Requirements
 
@@ -15,4 +15,4 @@ Plugin to share images directly to a WordPress site via Web Share Target API.
 
 ## Contributing
 
-Any kind of contributions to Image Sharer are welcome. Please [read the contributing guidelines](https://github.com/felix-arntz/wp-image-sharer/blob/master/CONTRIBUTING.md) to get started.
+Any kind of contributions to Share Target are welcome. Please [read the contributing guidelines](https://github.com/felix-arntz/wp-share-target/blob/master/CONTRIBUTING.md) to get started.

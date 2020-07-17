@@ -1,13 +1,13 @@
 <?php
 /**
- * Class Felix_Arntz\WP_Image_Sharer\Web_App_Manifest
+ * Class Felix_Arntz\WP_Share_Target\Web_App_Manifest
  *
- * @package Felix_Arntz\WP_Image_Sharer
+ * @package Felix_Arntz\WP_Share_Target
  * @license GNU General Public License v2 (or later)
- * @link    https://wordpress.org/plugins/image-sharer/
+ * @link    https://wordpress.org/plugins/share-target/
  */
 
-namespace Felix_Arntz\WP_Image_Sharer;
+namespace Felix_Arntz\WP_Share_Target;
 
 /**
  * Class integrating with the site's web app manifest.

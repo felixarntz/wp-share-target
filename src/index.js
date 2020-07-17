@@ -14,13 +14,13 @@ if ( ! global.wp.shareTarget ) {
 }
 
 /**
- * Handles the postMessage event with 'image_sharer_share' action which is
+ * Handles the postMessage event with 'wp_share_target_share' action which is
  * dispatched from the service worker.
  *
  * @param {Object} event Event with relevant data in the `data` property.
  */
 const receivePostMessage = async ( event ) => {
-	if ( 'image_sharer_share' !== event.data.action ) {
+	if ( 'wp_share_target_share' !== event.data.action ) {
 		return;
 	}
 
@@ -43,7 +43,7 @@ if ( navigator.serviceWorker ) {
 
 		if ( registration.active ) {
 			registration.active.postMessage( {
-				action: 'receive_image_sharer_share',
+				action: 'receive_wp_share_target_share',
 			} );
 		}
 	} )();

@@ -1,4 +1,4 @@
-# Contribute to Image Sharer
+# Contribute to Share Target
 
 Bug reports, patches, translations and any kind of contributions are very welcome. When contributing, please ensure you stick to the following guidelines.
 
@@ -6,7 +6,7 @@ Bug reports, patches, translations and any kind of contributions are very welcom
 
 When writing a bug report...
 
-* [open an issue](https://github.com/felix-arntz/wp-image-sharer/issues/new)
+* [open an issue](https://github.com/felix-arntz/wp-share-target/issues/new)
 * follow the guidelines specified in the issue template
 
 We will take a look at your issue and either assign it keywords and a milestone or get back to you if there are open questions.
@@ -22,7 +22,7 @@ When contributing code...
     * make sure you document the code properly
     * test your code with the constant `WP_DEBUG` enabled
 * when committing, in addition to a note about the fix, please reference your issue (if present)
-* push the changes to your fork and [submit a pull request](https://github.com/felix-arntz/wp-image-sharer/compare) to the `master` branch
+* push the changes to your fork and [submit a pull request](https://github.com/felix-arntz/wp-share-target/compare) to the `master` branch
 * follow the guidelines specified in the pull request template
 
 After that we will review the pull-request as soon as possible and either merge it, make suggestions on improvements or ask you for further details about your implementation.
@@ -31,7 +31,7 @@ After that we will review the pull-request as soon as possible and either merge 
 
 When providing translations...
 
-* visit our project on [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/image-sharer) and sign in with your wordpress.org account (create one if you haven't yet)
+* visit our project on [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/share-target) and sign in with your wordpress.org account (create one if you haven't yet)
 * select the language you would like to contribute to
 * provide the missing translations
     * make sure you follow the guidelines outlined in the [Translator Handbook](https://make.wordpress.org/polyglots/handbook/translating/expectations/)

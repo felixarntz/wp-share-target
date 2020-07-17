@@ -2,9 +2,9 @@
 /**
  * Compatibility with PHPUnit < 6.0.
  *
- * @package Felix_Arntz\WP_Image_Sharer
+ * @package Felix_Arntz\WP_Share_Target
  * @license GNU General Public License v2 (or later)
- * @link    https://wordpress.org/plugins/image-sharer/
+ * @link    https://wordpress.org/plugins/share-target/
  */
 
 if ( class_exists( 'PHPUnit_Framework_TestCase' ) && ! class_exists( 'PHPUnit\Framework\TestCase' ) ) {
