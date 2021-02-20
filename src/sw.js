@@ -1,5 +1,7 @@
 /* global SHARE_URL, SHARE_REDIRECT_URL */
 
+let currentShareData;
+
 /**
  * Listens to a share event and sends data to the client via postMessage.
  *
@@ -27,48 +29,46 @@ self.addEventListener( 'fetch', async ( fetchEvent ) => {
 	const link = data.get( 'link' );
 	const file = data.get( 'file' );
 
-	// Get the client to send postMessage to below.
-	const client = await self.clients.get( fetchEvent.resultingClientId || fetchEvent.clientId );
-
-	/**
-	 * Sends postMessage event with the shared data.
-	 *
-	 * This function is run as an event listener for a 'message' event from
-	 * the client, which is necessary for race conditions where the redirect
-	 * takes too long or the browser takes too long to load.
-	 *
-	 * The client will send this 'message' event to indicate it is ready to
-	 * handle the shared data.
-	 *
-	 * @param {Object} messageEvent Message event data.
-	 */
-	const sendSharePostMessage = async ( messageEvent ) => {
-		if ( 'receive_wp_share_target_share' !== messageEvent.data.action ) {
-			return;
-		}
-
-		// Remove 'message' event listener so that it does not run again for
-		// the same data. Also clear the timeout since it is not needed in this
-		// case.
-		self.removeEventListener( 'message', sendSharePostMessage );
-		clearTimeout( timeoutID );
-
-		// Send postMessage to the client.
-		client.postMessage( {
-			action: 'wp_share_target_share',
-			title,
-			description,
-			link,
-			file,
-		} );
+	currentShareData = {
+		title,
+		description,
+		link,
+		file,
 	};
+} );
 
-	// Listen to 'message' event from client.
-	self.addEventListener( 'message', sendSharePostMessage );
+/**
+ * Sends postMessage event with the shared data.
+ *
+ * This function is run as an event listener for a 'message' event from
+ * the client, which is necessary for race conditions where the redirect
+ * takes too long or the browser takes too long to load.
+ *
+ * The client will send this 'message' event to indicate it is ready to
+ * handle the shared data.
+ *
+ * @param {Object} messageEvent Message event data.
+ */
+self.addEventListener( 'message', ( messageEvent ) => {
+	console.log( 'messageEvent', messageEvent ); // eslint-disable-line no-console
+	if ( 'receive_wp_share_target_share' !== messageEvent.data.action ) {
+		return;
+	}
 
-	// Remove 'message' event listener in case no 'message' has been received
-	// after 30 seconds, to prevent memory leaks.
-	const timeoutID = setTimeout( () => {
-		self.removeEventListener( 'message', sendSharePostMessage );
-	}, 30000 );
+	if ( ! messageEvent.source || messageEvent.source.url !== SHARE_REDIRECT_URL ) {
+		return;
+	}
+
+	if ( ! currentShareData ) {
+		return;
+	}
+
+	const messageData = {
+		action: 'wp_share_target_share',
+		...currentShareData,
+	};
+	currentShareData = undefined;
+
+	// Send postMessage to the client.
+	messageEvent.source.postMessage( messageData );
 } );
