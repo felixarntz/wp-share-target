@@ -50,7 +50,6 @@ self.addEventListener( 'fetch', async ( fetchEvent ) => {
  * @param {Object} messageEvent Message event data.
  */
 self.addEventListener( 'message', ( messageEvent ) => {
-	console.log( 'messageEvent', messageEvent ); // eslint-disable-line no-console
 	if ( 'receive_wp_share_target_share' !== messageEvent.data.action ) {
 		return;
 	}
