@@ -3,6 +3,7 @@
  */
 import uploadMediaFile from './upload-media-file';
 import createShareTargetAPI from './create-share-target-api';
+import createLoader from './create-loader';
 
 // Create shareTarget API object and assign to `wp` global.
 const shareTarget = createShareTargetAPI();
@@ -24,6 +25,9 @@ const receivePostMessage = async ( event ) => {
 		return;
 	}
 
+	const loader = createLoader( document.getElementById( 'wpbody' ) );
+	loader.insert();
+
 	const title = event.data.title;
 	const description = event.data.description;
 	const link = event.data.link;
@@ -35,6 +39,7 @@ const receivePostMessage = async ( event ) => {
 	}
 
 	await shareTarget.handleShare( { title, description, link, attachment } );
+	loader.detach();
 };
 
 if ( navigator.serviceWorker ) {
