@@ -1,4 +1,9 @@
 /**
+ * WordPress dependencies
+ */
+import domReady from '@wordpress/dom-ready';
+
+/**
  * Internal dependencies
  */
 import uploadMediaFile from './upload-media-file';
@@ -38,8 +43,10 @@ const receivePostMessage = async ( event ) => {
 		attachment = await uploadMediaFile( event.data.file );
 	}
 
-	await shareTarget.handleShare( { title, description, link, attachment } );
-	loader.detach();
+	domReady( async () => {
+		await shareTarget.handleShare( { title, description, link, attachment } );
+		loader.detach();
+	} );
 };
 
 if ( navigator.serviceWorker ) {
