@@ -1,11 +1,7 @@
 /**
- * WordPress dependencies
- */
-import domReady from '@wordpress/dom-ready';
-
-/**
  * Internal dependencies
  */
+import isEditorReady from './is-editor-ready';
 import uploadMediaFile from './upload-media-file';
 import createShareTargetAPI from './create-share-target-api';
 import createLoader from './create-loader';
@@ -43,10 +39,9 @@ const receivePostMessage = async ( event ) => {
 		attachment = await uploadMediaFile( event.data.file );
 	}
 
-	domReady( async () => {
-		await shareTarget.handleShare( { title, description, link, attachment } );
-		loader.detach();
-	} );
+	await isEditorReady();
+	await shareTarget.handleShare( { title, description, link, attachment } );
+	loader.detach();
 };
 
 if ( navigator.serviceWorker ) {
