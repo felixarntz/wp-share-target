@@ -32,6 +32,8 @@ export default function createLoader( element ) {
 	loaderContent.style.transform = 'translate(-50%, -50%)';
 	loaderContent.style.color = 'white';
 	loaderContent.style.fontSize = '3rem';
+	loaderContent.style.lineHeight = '1';
+	loaderContent.style.textAlign = 'center';
 	loaderContent.textContent = __( 'Loading shared data…', 'share-target' );
 
 	loaderDiv.appendChild( loaderContent );
