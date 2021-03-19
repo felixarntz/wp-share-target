@@ -1,10 +1,10 @@
 /**
  * Internal dependencies
  */
-import isEditorReady from './is-editor-ready';
-import uploadMediaFile from './upload-media-file';
-import createShareTargetAPI from './create-share-target-api';
-import createLoader from './create-loader';
+import createShareTargetAPI from './createShareTargetAPI';
+import isEditorReady from './util/isEditorReady';
+import createLoader from './util/createLoader';
+import uploadMediaFile from './util/uploadMediaFile';
 
 // Create shareTarget API object and assign to `wp` global.
 const shareTarget = createShareTargetAPI();

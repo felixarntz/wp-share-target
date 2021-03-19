@@ -7,7 +7,7 @@ import { dispatch } from '@wordpress/data';
 /**
  * Internal dependencies
  */
-import getAttachmentBlock from './get-attachment-block';
+import getAttachmentBlock from './getAttachmentBlock';
 
 /**
  * Handles data passed in a share event.

@@ -1,7 +1,7 @@
 /**
  * Internal dependencies
  */
-import handleShareDefault from './handle-share-default';
+import handleShareDefault from './util/handleShareDefault';
 
 /**
  * Creates a share handlers object which allows for registration and handling.
