@@ -9,7 +9,7 @@ import handleShareDefault from './util/handleShareDefault';
  * @return {Object} Share handlers object with methods `registerShareHandler`,
  *                  `getShareHandlers`, and `handleShare`.
  */
-const createShareTargetAPI = () => {
+export default function createShareTargetAPI() {
 	const registeredShareHandlers = [];
 
 	const shareHandlers = {
@@ -94,6 +94,4 @@ const createShareTargetAPI = () => {
 	};
 
 	return shareHandlers;
-};
-
-export default createShareTargetAPI;
+}

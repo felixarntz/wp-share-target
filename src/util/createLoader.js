@@ -11,7 +11,7 @@ let counter = 0;
  * @param {Object} element Element that the loader should be attached to.
  * @return {Object} Loader with `insert()` and `detach()` methods.
  */
-const createLoader = ( element ) => {
+export default function createLoader( element ) {
 	counter++;
 	const id = `wp-share-target-loader-${ counter }`;
 
@@ -44,6 +44,4 @@ const createLoader = ( element ) => {
 			element.removeChild( loaderDiv );
 		},
 	};
-};
-
-export default createLoader;
+}

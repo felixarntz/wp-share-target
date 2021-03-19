@@ -19,7 +19,7 @@ import { __ } from '@wordpress/i18n';
  * @return {Object} Object with block definition, with `name` and `attributes`
  *                  properties.
  */
-const getAttachmentBlock = ( attachment ) => {
+export default function getAttachmentBlock( attachment ) {
 	if ( startsWith( attachment.mime_type, 'audio/' ) ) {
 		return {
 			name: 'core/audio',
@@ -59,6 +59,4 @@ const getAttachmentBlock = ( attachment ) => {
 	throw {
 		message: __( 'Unsupported attachment MIME type.', 'share-target' ),
 	};
-};
-
-export default getAttachmentBlock;
+}

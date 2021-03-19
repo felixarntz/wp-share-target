@@ -25,7 +25,7 @@ import getAttachmentBlock from './getAttachmentBlock';
  * @return {Promise} Promise which resolves to true if the share data was
  *                   handled, or to false otherwise.
  */
-const handleShareDefault = async ( { title, description, link, attachment } ) => {
+export default async function handleShareDefault( { title, description, link, attachment } ) {
 	const blocks = [];
 
 	// If a title is passed, set the post title.
@@ -62,6 +62,4 @@ const handleShareDefault = async ( { title, description, link, attachment } ) =>
 	}
 
 	return true;
-};
-
-export default handleShareDefault;
+}

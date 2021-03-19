@@ -11,7 +11,7 @@ import { select, subscribe } from '@wordpress/data';
  *
  * @return {Promise} Promise that resolves when the block editor is ready.
  */
-const isEditorReady = async () => {
+export default async function isEditorReady() {
 	new Promise( ( resolve ) => {
 		const unsubscribe = subscribe( () => {
 			// Approximate editor ready by checking for clean post or blocks loaded.
@@ -27,6 +27,4 @@ const isEditorReady = async () => {
 			}
 		} );
 	} );
-};
-
-export default isEditorReady;
+}

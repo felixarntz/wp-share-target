@@ -21,7 +21,7 @@ if ( ! global.wp.shareTarget ) {
  *
  * @param {Object} event Event with relevant data in the `data` property.
  */
-const receivePostMessage = async ( event ) => {
+async function receivePostMessage( event ) {
 	if ( 'wp_share_target_share' !== event.data.action ) {
 		return;
 	}
