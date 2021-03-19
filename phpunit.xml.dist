@@ -2,7 +2,7 @@
 <phpunit
     backupGlobals="false"
     backupStaticAttributes="false"
-    bootstrap="tests/phpunit/bootstrap.php"
+    bootstrap="tests/phpunit/includes/bootstrap.php"
     colors="true"
     convertErrorsToExceptions="true"
     convertNoticesToExceptions="true"
@@ -17,9 +17,15 @@
     >
     <testsuites>
         <testsuite>
-            <directory suffix=".php">./tests/phpunit/unit/</directory>
+            <directory suffix=".php">./tests/phpunit/tests/</directory>
         </testsuite>
     </testsuites>
+
+	<groups>
+		<exclude>
+			<group>ms-required</group>
+		</exclude>
+	</groups>
 
     <filter>
         <whitelist>

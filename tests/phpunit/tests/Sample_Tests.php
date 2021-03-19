@@ -1,25 +1,25 @@
 <?php
 /**
- * Class Felix_Arntz\WP_Share_Target\Tests\PHPUnit\Unit\Sample_Tests
+ * Class Felix_Arntz\WP_Share_Target\Tests\PHPUnit\Tests\Sample_Tests
  *
  * @package Felix_Arntz\WP_Share_Target
  * @license GNU General Public License v2 (or later)
  * @link    https://wordpress.org/plugins/share-target/
  */
 
-namespace Felix_Arntz\WP_Share_Target\Tests\PHPUnit\Unit;
+namespace Felix_Arntz\WP_Share_Target\Tests\PHPUnit\Tests;
 
-use Felix_Arntz\WP_Share_Target\Tests\PHPUnit\Framework\Unit_Test_Case;
+use Felix_Arntz\WP_Share_Target\Tests\PHPUnit\Includes\Test_Case;
 
 /**
  * Class containing a sample test.
  */
-class Sample_Tests extends Unit_Test_Case {
+class Sample_Tests extends Test_Case {
 
 	/**
 	 * Performs a sample test.
 	 */
 	public function testNothingUseful() {
-		$this->assertTrue( true );
+		$this->assertTrue( defined( 'ABSPATH' ) );
 	}
 }

@@ -63,6 +63,7 @@ class Service_Worker implements Registerable {
 						'SHARE_REDIRECT_URL' => "'" . admin_url( 'post-new.php' ) . "'",
 					);
 
+					// phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
 					$script = file_get_contents( $this->context->path( 'build/sw.js' ) );
 					$script = preg_replace( '#/\*\s*global.+?\*/#s', '', $script );
 

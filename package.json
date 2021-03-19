@@ -39,10 +39,13 @@
     "check-licenses": "wp-scripts check-licenses",
     "lint:css": "wp-scripts lint-style",
     "lint:js": "wp-scripts lint-js",
+    "lint:php": "composer phpcs",
     "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "mysql:start": "docker-compose up -d >/dev/null",
+    "mysql:stop": "docker-compose down --remove-orphans >/dev/null 2>&1",
     "start": "wp-scripts start",
-    "test:e2e": "wp-scripts test-e2e",
-    "test:unit": "wp-scripts test-unit-js"
+    "test:js": "wp-scripts test-unit-js",
+    "test:php": "composer phpunit"
   },
   "devDependencies": {
     "@wordpress/scripts": "^6",
