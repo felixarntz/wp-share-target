@@ -36,7 +36,11 @@ const receivePostMessage = async ( event ) => {
 
 	// If a media file is passed, upload it and get the attachment.
 	if ( event.data.file && event.data.file.name ) {
-		attachment = await uploadMediaFile( event.data.file );
+		try {
+			attachment = await uploadMediaFile( event.data.file );
+		} catch ( error ) {
+			console.error( error.message ); // eslint-disable-line no-console
+		}
 	}
 
 	await isEditorReady();
