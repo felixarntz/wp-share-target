@@ -39,10 +39,10 @@ function wp_share_target_load() {
 	if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
 		require_once dirname( __FILE__ ) . '/vendor/autoload.php';
 	} else {
+		require_once dirname( __FILE__ ) . '/inc/Registerable.php';
 		require_once dirname( __FILE__ ) . '/inc/Context.php';
 		require_once dirname( __FILE__ ) . '/inc/Editor.php';
 		require_once dirname( __FILE__ ) . '/inc/Plugin.php';
-		require_once dirname( __FILE__ ) . '/inc/Registerable.php';
 		require_once dirname( __FILE__ ) . '/inc/Service_Worker.php';
 		require_once dirname( __FILE__ ) . '/inc/Web_App_Manifest.php';
 	}
