@@ -60,11 +60,13 @@ function wp_share_target_display_php_version_notice() {
 	<div class="notice notice-error">
 		<p>
 			<?php
-			sprintf(
-				/* translators: 1: required version, 2: currently used version */
-				__( 'Share Target requires at least PHP version %1$s. Your site is currently running on PHP %2$s.', 'share-target' ),
-				'7.0',
-				phpversion()
+			echo esc_html(
+				sprintf(
+					/* translators: 1: required version, 2: currently used version */
+					__( 'Share Target requires at least PHP version %1$s. Your site is currently running on PHP %2$s.', 'share-target' ),
+					'7.0',
+					phpversion()
+				)
 			);
 			?>
 		</p>
@@ -82,11 +84,13 @@ function wp_share_target_display_wp_version_notice() {
 	<div class="notice notice-error">
 		<p>
 			<?php
-			sprintf(
-				/* translators: 1: required version, 2: currently used version */
-				__( 'Share Target requires at least WordPress version %1$s. Your site is currently running on WordPress %2$s.', 'share-target' ),
-				'5.0',
-				get_bloginfo( 'version' )
+			echo esc_html(
+				sprintf(
+					/* translators: 1: required version, 2: currently used version */
+					__( 'Share Target requires at least WordPress version %1$s. Your site is currently running on WordPress %2$s.', 'share-target' ),
+					'5.0',
+					get_bloginfo( 'version' )
+				)
 			);
 			?>
 		</p>

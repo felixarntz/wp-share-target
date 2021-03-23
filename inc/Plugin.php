@@ -49,9 +49,60 @@ class Plugin implements Registerable {
 	 * @since 1.0.0
 	 */
 	public function register() {
+		if ( ! defined( 'PWA_VERSION' ) ) {
+			add_action(
+				'admin_notices',
+				function() {
+					$this->display_pwa_plugin_missing_notice();
+				}
+			);
+			return;
+		}
+
 		( new Web_App_Manifest( $this->context ) )->register();
 		( new Service_Worker( $this->context ) )->register();
 		( new Editor( $this->context ) )->register();
+	}
+
+	/**
+	 * Displays an admin notice about the PWA plugin missing.
+	 *
+	 * @since 1.0.0
+	 */
+	private function display_pwa_plugin_missing_notice() {
+		if ( current_user_can( 'install_plugins' ) ) {
+			$pwa_plugin_url = add_query_arg(
+				array(
+					's'    => 'pwa',
+					'tab'  => 'search',
+					'type' => 'term',
+				),
+				admin_url( 'plugin-install.php' )
+			);
+		} else {
+			$pwa_plugin_url = __( 'https://wordpress.org/plugins/pwa/', 'share-target' );
+		}
+
+		?>
+		<div class="notice notice-error">
+			<p>
+				<?php
+				echo wp_kses(
+					sprintf(
+						/* translators: %s: URL to PWA plugin in WordPress directory */
+						__( 'Share Target requires the <a href="%s">PWA plugin</a> to be installed and activated. Once you have done so, you will be able to share data directly to your WordPress site.', 'share-target' ),
+						$pwa_plugin_url
+					),
+					array(
+						'a' => array(
+							'href'   => true,
+						),
+					)
+				);
+				?>
+			</p>
+		</div>
+		<?php
 	}
 
 	/**
