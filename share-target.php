@@ -9,7 +9,7 @@
  * @wordpress-plugin
  * Plugin Name: Share Target
  * Plugin URI:  https://wordpress.org/plugins/share-target/
- * Description: Plugin to share images and other media directly to a WordPress site via Web Share Target API.
+ * Description: Allows to share images and other content directly to a WordPress site through the Web Share Target API.
  * Version:     1.0.0
  * Author:      Felix Arntz
  * Author URI:  https://felix-arntz.me

@@ -1,6 +1,6 @@
 {
   "name": "felix-arntz/wp-share-target",
-  "description": "Plugin to share images and other media directly to a WordPress site via Web Share Target API.",
+  "description": "Allows to share images and other content directly to a WordPress site through the Web Share Target API.",
   "version": "1.0.0",
   "license": "GPL-2.0-or-later",
   "type": "wordpress-plugin",
