@@ -70,6 +70,8 @@ class Plugin implements Registerable {
 	 * @since 1.0.0
 	 */
 	private function display_pwa_plugin_missing_notice() {
+		$pwa_plugin_url = __( 'https://wordpress.org/plugins/pwa/', 'share-target' );
+
 		if ( current_user_can( 'install_plugins' ) ) {
 			$pwa_plugin_url = add_query_arg(
 				array(
@@ -79,8 +81,6 @@ class Plugin implements Registerable {
 				),
 				admin_url( 'plugin-install.php' )
 			);
-		} else {
-			$pwa_plugin_url = __( 'https://wordpress.org/plugins/pwa/', 'share-target' );
 		}
 
 		?>
