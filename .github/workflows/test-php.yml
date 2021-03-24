@@ -29,13 +29,12 @@ jobs:
     timeout-minutes: 60
     services:
       mysql:
-        image: mariadb:latest
+        image: mysql:5.7
+        ports:
+          - 9306:3306
         env:
           MYSQL_DATABASE: wordpress_test
           MYSQL_ROOT_PASSWORD: password
-        ports:
-          - 9306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     continue-on-error: ${{ matrix.experimental == true }}
     strategy:
       matrix:
@@ -92,12 +91,6 @@ jobs:
 
       - name: Shutdown default MySQL service
         run: sudo service mysql stop
-
-      - name: Verify MariaDB connection
-        run: |
-          while ! mysqladmin ping -h"127.0.0.1" -P"${{ job.services.mysql.ports[9306] }}" --silent; do
-            sleep 1
-          done
 
       - name: Run tests
         run: |
