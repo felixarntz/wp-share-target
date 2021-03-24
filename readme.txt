@@ -7,7 +7,7 @@ Requires PHP:      7.0
 Stable tag:        1.0.0
 License:           GNU General Public License v2 (or later)
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
-Tags:              image, media, sharing, web, share, target, api, progressive, pwa
+Tags:              image, media, sharing, web, share target, api, progressive, pwa
 
 Plugin to share images and other media directly to a WordPress site via Web Share Target API.
 
@@ -30,7 +30,7 @@ For regular support requests, please use the [wordpress.org support forums](http
 
 = How can I contribute to the plugin? =
 
-If you have some ideas to improve the plugin or to solve a bug, feel free to raise an issue or submit a pull request in the [Github repository for the plugin](https://github.com/felix-arntz/wp-share-target). Please stick to the [contributing guidelines](https://github.com/felix-arntz/wp-share-target/blob/master/CONTRIBUTING.md).
+If you have some ideas to improve the plugin or to solve a bug, feel free to raise an issue or submit a pull request in the [Github repository for the plugin](https://github.com/felix-arntz/wp-share-target). Please stick to the [contributing guidelines](https://github.com/felix-arntz/wp-share-target/blob/main/CONTRIBUTING.md).
 
 You can also contribute to the plugin by translating it. Simply visit [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/share-target) to get started.
 
