@@ -1,8 +1,6 @@
 [![WordPress plugin](https://img.shields.io/wordpress/plugin/v/share-target.svg?maxAge=2592000)](https://wordpress.org/plugins/share-target/)
 [![WordPress](https://img.shields.io/wordpress/v/share-target.svg?maxAge=2592000)](https://wordpress.org/plugins/share-target/)
-[![Build Status](https://api.travis-ci.org/felix-arntz/wp-share-target.png?branch=master)](https://travis-ci.org/felix-arntz/wp-share-target)
-[![Latest Stable Version](https://poser.pugx.org/felix-arntz/wp-share-target/version)](https://packagist.org/packages/felix-arntz/wp-share-target)
-[![License](https://poser.pugx.org/felix-arntz/wp-share-target/license)](https://packagist.org/packages/felix-arntz/wp-share-target)
+[![License](https://img.shields.io/github/license/felixarntz/wp-share-target)](https://github.com/felixarntz/wp-share-target/blob/master/LICENSE)
 
 # Share Target
 
