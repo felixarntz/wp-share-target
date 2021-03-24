@@ -56,6 +56,7 @@
     "@wordpress/media-utils": "*"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "*",
     "@wordpress/scripts": "*",
     "copy-webpack-plugin": "^6",
     "eslint": "*"
