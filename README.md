@@ -8,7 +8,7 @@ Plugin to share images and other media directly to a WordPress site via Web Shar
 
 ## Requirements
 
-* WordPress >= 5.0
+* WordPress >= 5.2
 * PHP >= 7.0
 
 ## Contributing

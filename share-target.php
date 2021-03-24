@@ -31,7 +31,7 @@ function wp_share_target_load() {
 		return;
 	}
 
-	if ( version_compare( get_bloginfo( 'version' ), '5.0', '<' ) ) {
+	if ( version_compare( get_bloginfo( 'version' ), '5.2', '<' ) ) {
 		add_action( 'admin_notices', 'wp_share_target_display_wp_version_notice' );
 		return;
 	}
@@ -88,7 +88,7 @@ function wp_share_target_display_wp_version_notice() {
 				sprintf(
 					/* translators: 1: required version, 2: currently used version */
 					__( 'Share Target requires at least WordPress version %1$s. Your site is currently running on WordPress %2$s.', 'share-target' ),
-					'5.0',
+					'5.2',
 					get_bloginfo( 'version' )
 				)
 			);

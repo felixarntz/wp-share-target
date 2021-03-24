@@ -1,6 +1,6 @@
 <!--
 BEFORE OPENING YOUR PULL REQUEST:
-- Make sure your code is backward-compatible with WordPress 5.0 and PHP 7.0.
+- Make sure your code is backward-compatible with WordPress 5.2 and PHP 7.0.
 - Make sure your code follows the WordPress coding standards.
 - Make sure your code is properly documented.
 -->
@@ -20,6 +20,6 @@ Adresses issue #
 
 ## Checklist:
 - [ ] My code is tested.
-- [ ] My code is backward-compatible with WordPress 5.0 and PHP 7.0.
+- [ ] My code is backward-compatible with WordPress 5.2 and PHP 7.0.
 - [ ] My code follows the [WordPress](https://make.wordpress.org/core/handbook/best-practices/coding-standards/) coding standards.
 - [ ] My code has proper inline documentation.
