@@ -5,7 +5,7 @@ services:
     image: ${LOCAL_DB_TYPE-mysql}:${LOCAL_DB_VERSION-5.7}
     restart: always
     ports:
-      - 9306:3306
+      - ${LOCAL_DB_PORT-9306}:3306
     environment:
       MYSQL_DATABASE: wordpress_test
       MYSQL_ROOT_PASSWORD: password

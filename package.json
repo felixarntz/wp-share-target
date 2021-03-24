@@ -41,8 +41,8 @@
     "lint:js": "wp-scripts lint-js",
     "lint:php": "composer phpcs",
     "lint:pkg-json": "wp-scripts lint-pkg-json",
-    "mysql:start": "docker-compose up -d >/dev/null",
-    "mysql:stop": "docker-compose down --remove-orphans >/dev/null 2>&1",
+    "mysql:start": "./tests/mysql/start.sh",
+    "mysql:stop": "./tests/mysql/stop.sh",
     "start": "wp-scripts start",
     "test:js": "wp-scripts test-unit-js",
     "test:php": "composer phpunit"
