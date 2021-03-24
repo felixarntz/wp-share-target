@@ -13,11 +13,9 @@ if ( ! config.plugins ) {
 }
 
 config.plugins.push(
-	new CopyPlugin( [
-		{
-			from: 'src/sw.js',
-		},
-	] )
+	new CopyPlugin( {
+		patterns: [ 'src/sw.js' ],
+	} )
 );
 
 module.exports = config;

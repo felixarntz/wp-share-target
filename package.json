@@ -57,6 +57,7 @@
   },
   "devDependencies": {
     "@wordpress/scripts": "*",
-    "copy-webpack-plugin": "*"
+    "copy-webpack-plugin": "^6",
+    "eslint": "*"
   }
 }
