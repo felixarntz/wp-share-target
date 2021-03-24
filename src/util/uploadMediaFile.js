@@ -17,10 +17,10 @@ export default async function uploadMediaFile( file ) {
 		filesList: [ file ],
 		allowedTypes: [ 'audio', 'image', 'video' ],
 		onFileChange: ( files ) => {
-			if ( ! files[0] ) {
+			if ( ! files[ 0 ] ) {
 				return;
 			}
-			attachment = files[0];
+			attachment = files[ 0 ];
 		},
 		onError: ( error ) => {
 			throw error;

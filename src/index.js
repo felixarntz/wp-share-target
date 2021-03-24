@@ -46,7 +46,7 @@ async function receivePostMessage( event ) {
 	await isEditorReady();
 	await shareTarget.handleShare( { title, description, link, attachment } );
 	loader.detach();
-};
+}
 
 if ( navigator.serviceWorker ) {
 	( async () => {

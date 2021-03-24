@@ -38,7 +38,9 @@ export default function createShareTargetAPI() {
 		 */
 		registerShareHandler( options ) {
 			if ( 'function' !== typeof options.handle ) {
-				throw new Error( 'options.handle argument must be a function.' );
+				throw new Error(
+					'options.handle argument must be a function.'
+				);
 			}
 
 			options.priority = options.priority || 10;

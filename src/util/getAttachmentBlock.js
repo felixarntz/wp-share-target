@@ -1,9 +1,4 @@
 /**
- * External dependencies
- */
-import { startsWith } from 'lodash';
-
-/**
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
@@ -20,7 +15,7 @@ import { __ } from '@wordpress/i18n';
  *                  properties.
  */
 export default function getAttachmentBlock( attachment ) {
-	if ( startsWith( attachment.mime_type, 'audio/' ) ) {
+	if ( attachment.mime_type.startsWith( 'audio/' ) ) {
 		return {
 			name: 'core/audio',
 			attributes: {
@@ -31,7 +26,7 @@ export default function getAttachmentBlock( attachment ) {
 		};
 	}
 
-	if ( startsWith( attachment.mime_type, 'image/' ) ) {
+	if ( attachment.mime_type.startsWith( 'image/' ) ) {
 		return {
 			name: 'core/image',
 			attributes: {
@@ -45,7 +40,7 @@ export default function getAttachmentBlock( attachment ) {
 		};
 	}
 
-	if ( startsWith( attachment.mime_type, 'video/' ) ) {
+	if ( attachment.mime_type.startsWith( 'video/' ) ) {
 		return {
 			name: 'core/video',
 			attributes: {

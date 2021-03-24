@@ -20,7 +20,9 @@ self.addEventListener( 'fetch', async ( fetchEvent ) => {
 	}
 
 	// Redirect the client to the URL that will handle the shared data.
-	await fetchEvent.respondWith( Response.redirect( SHARE_REDIRECT_URL, 303 ) );
+	await fetchEvent.respondWith(
+		Response.redirect( SHARE_REDIRECT_URL, 303 )
+	);
 
 	// Receive shared data from the request.
 	const data = await fetchEvent.request.formData();
@@ -54,7 +56,10 @@ self.addEventListener( 'message', ( messageEvent ) => {
 		return;
 	}
 
-	if ( ! messageEvent.source || messageEvent.source.url !== SHARE_REDIRECT_URL ) {
+	if (
+		! messageEvent.source ||
+		messageEvent.source.url !== SHARE_REDIRECT_URL
+	) {
 		return;
 	}
 

@@ -37,6 +37,8 @@
     "build": "wp-scripts build",
     "check-engines": "wp-scripts check-engines",
     "check-licenses": "wp-scripts check-licenses",
+    "format:js": "wp-scripts format-js",
+    "format:php": "composer phpcbf",
     "lint:css": "wp-scripts lint-style",
     "lint:js": "wp-scripts lint-js",
     "lint:php": "composer phpcs",
@@ -47,8 +49,14 @@
     "test:js": "wp-scripts test-unit-js",
     "test:php": "composer phpunit"
   },
+  "dependencies": {
+    "@wordpress/blocks": "*",
+    "@wordpress/data": "*",
+    "@wordpress/i18n": "*",
+    "@wordpress/media-utils": "*"
+  },
   "devDependencies": {
-    "@wordpress/scripts": "^6",
-    "copy-webpack-plugin": "^5"
+    "@wordpress/scripts": "*",
+    "copy-webpack-plugin": "*"
   }
 }

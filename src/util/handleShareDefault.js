@@ -25,7 +25,12 @@ import getAttachmentBlock from './getAttachmentBlock';
  * @return {Promise} Promise which resolves to true if the share data was
  *                   handled, or to false otherwise.
  */
-export default async function handleShareDefault( { title, description, link, attachment } ) {
+export default async function handleShareDefault( {
+	title,
+	description,
+	link,
+	attachment,
+} ) {
 	const blocks = [];
 
 	// If a title is passed, set the post title.
@@ -45,16 +50,20 @@ export default async function handleShareDefault( { title, description, link, at
 
 	// If a description is passed, add it as content.
 	if ( description && description.length ) {
-		blocks.push( createBlock( 'core/paragraph', {
-			content: description,
-		} ) );
+		blocks.push(
+			createBlock( 'core/paragraph', {
+				content: description,
+			} )
+		);
 	}
 
 	// If a link is passed, include it in the content.
 	if ( link && link.length ) {
-		blocks.push( createBlock( 'core/paragraph', {
-			content: `<a href="${ link }">${ link }</a>`,
-		} ) );
+		blocks.push(
+			createBlock( 'core/paragraph', {
+				content: `<a href="${ link }">${ link }</a>`,
+			} )
+		);
 	}
 
 	if ( blocks.length ) {

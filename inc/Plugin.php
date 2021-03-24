@@ -95,7 +95,7 @@ class Plugin implements Registerable {
 					),
 					array(
 						'a' => array(
-							'href'   => true,
+							'href' => true,
 						),
 					)
 				);

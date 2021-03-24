@@ -12,10 +12,12 @@ if ( ! config.plugins ) {
 	config.plugins = [];
 }
 
-config.plugins.push( new CopyPlugin( [
-	{
-		from: 'src/sw.js',
-	}
-] ) );
+config.plugins.push(
+	new CopyPlugin( [
+		{
+			from: 'src/sw.js',
+		},
+	] )
+);
 
 module.exports = config;
