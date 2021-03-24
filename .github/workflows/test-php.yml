@@ -54,6 +54,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: mysql
+          tools: composer
+
+      - name: Setup WordPress
+        run: |
+          if [[ "${{ matrix.wp }}" == "latest" ]]; then
+            curl -s http://api.wordpress.org/core/version-check/1.7/ > /tmp/wp-latest.json
+            WP_VERSION=$(grep -o '"version":"[^"]*' /tmp/wp-latest.json | sed 's/"version":"//')
+          else
+            WP_VERSION="${{ matrix.wp }}"
+          fi
+          composer require "roots/wordpress:$WP_VERSION" "wp-phpunit/wp-phpunit:$WP_VERSION" --dev --no-update
+
       - name: Get Composer cache directory
         id: composer-cache
         run: echo "::set-output name=dir::$(composer config cache-files-dir)"
@@ -62,28 +79,15 @@ jobs:
         uses: pat-s/always-upload-cache@v2.1.3
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}-wp$WP_VERSION
           restore-keys: |
             ${{ runner.os }}-composer-
             ${{ runner.os }}-
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: ${{ matrix.php }}
-          extensions: mysql
-          tools: composer
-
       - name: Install dependencies
         run: |
-          if [[ "${{ matrix.wp }}" == "latest" ]]; then
-            curl -s http://api.wordpress.org/core/version-check/1.7/ > /tmp/wp-latest.json
-            WP_VERSION=$(grep -o '"version":"[^"]*' /tmp/wp-latest.json | sed 's/"version":"//')
-          else
-            WP_VERSION="${{ matrix.wp }}"
-          fi
-          composer require "roots/wordpress:$WP_VERSION" "wp-phpunit/wp-phpunit:$WP_VERSION" --dev --no-install
           composer install --prefer-dist --no-suggest --no-progress --no-interaction --no-scripts
+          composer update roots/wordpress wp-phpunit/wp-phpunit
           composer dump-autoload --no-interaction
 
       - name: Shutdown default MySQL service
