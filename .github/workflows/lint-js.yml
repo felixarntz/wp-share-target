@@ -10,6 +10,7 @@ on:
       - '.prettier*'
       - '**/package.json'
       - 'package-lock.json'
+      - '.github/workflows/lint-js.yml'
     branches:
       - main
   pull_request:
@@ -21,10 +22,11 @@ on:
       - '.prettier*'
       - '**/package.json'
       - 'package-lock.json'
+      - '.github/workflows/lint-js.yml'
 
 jobs:
   lint:
-    name: Lint
+    name: Lint JS
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:

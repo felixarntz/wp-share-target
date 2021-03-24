@@ -9,6 +9,7 @@ on:
       - 'phpmd.xml.dist'
       - 'composer.json'
       - 'composer.lock'
+      - '.github/workflows/lint-php.yml'
     branches:
       - main
   pull_request:
@@ -19,10 +20,11 @@ on:
       - 'phpmd.xml.dist'
       - 'composer.json'
       - 'composer.lock'
+      - '.github/workflows/lint-php.yml'
 
 jobs:
   lint:
-    name: Lint
+    name: Lint PHP
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:

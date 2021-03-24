@@ -8,6 +8,7 @@ on:
       - '.nvmrc'
       - '**/package.json'
       - 'package-lock.json'
+      - '.github/workflows/test-js.yml'
     branches:
       - main
   pull_request:
@@ -17,10 +18,11 @@ on:
       - '.nvmrc'
       - '**/package.json'
       - 'package-lock.json'
+      - '.github/workflows/test-js.yml'
 
 jobs:
-  unit-js:
-    name: Test
+  test:
+    name: Test JS
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
