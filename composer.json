@@ -37,6 +37,12 @@
       "Felix_Arntz\\WP_Share_Target\\Tests\\PHPUnit\\Includes\\": "tests/phpunit/includes"
     }
   },
+  "config": {
+    "platform": {
+      "php": "7.0"
+    },
+    "sort-packages": true
+  },
   "require": {
     "php": ">=7.0",
     "composer/installers": "^1"
