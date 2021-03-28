@@ -1,3 +1,6 @@
+/**
+ * Internal dependencies
+ */
 import createLoader from './createLoader';
 
 describe( 'createLoader', () => {
@@ -11,7 +14,7 @@ describe( 'createLoader', () => {
 		}
 	} );
 
-	it( 'should create an object with insert and detach functions', () => {
+	it( 'creates an object with insert and detach functions', () => {
 		const newLoader = createLoader( element );
 
 		expect( newLoader ).toMatchObject( {
@@ -21,7 +24,7 @@ describe( 'createLoader', () => {
 	} );
 
 	describe( 'insert', () => {
-		it( 'should add the loader to the element', () => {
+		it( 'adds the loader to the element', () => {
 			expect( element ).toBeEmptyDOMElement();
 			loader.insert();
 
@@ -41,7 +44,7 @@ describe( 'createLoader', () => {
 			loader.insert();
 		} );
 
-		it( 'should remove the loader from the element', () => {
+		it( 'removes the loader from the element', () => {
 			expect( element ).not.toBeEmptyDOMElement();
 			loader.detach();
 
