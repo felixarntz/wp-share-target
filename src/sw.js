@@ -21,7 +21,7 @@ self.addEventListener( 'fetch', async ( fetchEvent ) => {
 
 	// Redirect the client to the URL that will handle the shared data.
 	await fetchEvent.respondWith(
-		Response.redirect( SHARE_REDIRECT_URL, 303 )
+		self.Response.redirect( SHARE_REDIRECT_URL, 303 )
 	);
 
 	// Receive shared data from the request.
