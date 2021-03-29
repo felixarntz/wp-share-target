@@ -22,15 +22,14 @@ describe( 'handleShareDefault', () => {
 
 		editPost = jest.fn();
 		insertBlocks = jest.fn();
-		const coreEditor = { editPost };
-		const coreBlockEditor = { insertBlocks };
-
+		const dispatchCoreEditor = { editPost };
+		const dispatchCoreBlockEditor = { insertBlocks };
 		wpData.dispatch.mockImplementation( ( storeName ) => {
 			switch ( storeName ) {
 				case 'core/editor':
-					return coreEditor;
+					return dispatchCoreEditor;
 				case 'core/block-editor':
-					return coreBlockEditor;
+					return dispatchCoreBlockEditor;
 			}
 			return null;
 		} );
