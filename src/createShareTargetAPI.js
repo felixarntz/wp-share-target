@@ -49,7 +49,15 @@ export default function createShareTargetAPI() {
 				...options,
 			} );
 
-			registeredShareHandlers.sort( ( a, b ) => a.priority < b.priority );
+			registeredShareHandlers.sort( ( a, b ) => {
+				if ( a.priority > b.priority ) {
+					return 1;
+				}
+				if ( a.priority < b.priority ) {
+					return -1;
+				}
+				return 0;
+			} );
 		},
 
 		/**
