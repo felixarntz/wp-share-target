@@ -4,7 +4,7 @@ Contributors:      flixos90
 Requires at least: 5.2
 Tested up to:      5.7
 Requires PHP:      7.0
-Stable tag:        1.0.0
+Stable tag:        1.0.0-beta.1
 License:           GNU General Public License v2 (or later)
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 Tags:              image, media, sharing, web, share target, api, progressive, pwa
@@ -120,6 +120,6 @@ You can also contribute to the plugin by translating it. Simply visit [translate
 
 == Changelog ==
 
-= 1.0.0 =
+= 1.0.0-beta.1 =
 
-* Initial release
+* Initial beta release

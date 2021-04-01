@@ -1,6 +1,6 @@
 {
   "name": "wp-share-target",
-  "version": "1.0.0",
+  "version": "1.0.0-beta.1",
   "description": "Allows to share images and other content directly to a WordPress site through the Web Share Target API.",
   "keywords": [
     "wordpress",
