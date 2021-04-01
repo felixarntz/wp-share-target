@@ -30,7 +30,62 @@ This plugin is powered by the Web Share Target API. The [Web Share Target API](h
 
 ## Third-party developer API
 
-TODO.
+The Share Target plugin allows other plugins to integrate with it. You can customize what should happen with incoming shared content when it arrives in the block editor, conditionally overriding the default behavior of the plugin.
+
+In PHP, enqueue your custom JavaScript file. Make sure to include the `share-target` script in its dependencies. For example:
+
+```php
+wp_enqueue_script(
+  'my-share-target-handler',
+  '/assets/js/my-share-target-handler.js',
+  array( 'share-target' )
+);
+```
+
+In your JavaScript file you can then add your custom share handler using the following function:
+
+**`wp.shareTarget.registerShareHandler( options )`**
+
+Registers a new share handler for incoming shared data.
+
+Parameters:
+
+* `options`: _(Object) (required)_ Handler options.
+* `options.handle`: _(Function) (required)_ Share handler function. Must be asynchronous and accept an object with properties `title`, `description`, `link` (each strings), and `attachment` (object). Any of these may be undefined. Depending on the data, the function should decide whether to handle it and if so run the necessary logic and return true, to stop following handlers from being called. Otherwise, it should return false.
+* `options.priority`: _(number) (optional)_ Priority for the handler. A lower number means higher priority, like for WordPress hooks. Default is 10.
+
+The following example handles any shared Spotify content and embeds it into the post:
+
+```js
+// Matches a shared Spotify URL.
+const spotifyRegex = /^https:\/\/open\.spotify\.com/;
+
+wp.shareTarget.registerShareHandler( {
+  handle: async ( { link, attachment } ) => {
+    // Do not handle if a media file is being shared.
+    if ( attachment ) {
+      return false;
+    }
+
+    // If a shared Spotify URL, embed it.
+    if ( link && link.match( spotifyRegex ) ) {
+      wp.data.dispatch( 'core/block-editor' ).insertBlocks( [
+        wp.blocks.createBlock( 'core/embed', {
+          url: link,
+          type: 'rich',
+          providerNameSlug: 'spotify',
+          responsive: true,
+        } ),
+      ] );
+      return true;
+    }
+
+    // Otherwise fall back to other handlers.
+    return false;
+  },
+  priority: 5,
+} );
+```
 
 ## Contributing
 
