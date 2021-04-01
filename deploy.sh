@@ -84,34 +84,32 @@ fi
 
 cd $SVNPATH/trunk/
 
-printf "Installing Composer dependencies..."
-rm -rf vendor/
-composer install --prefer-dist --no-dev
-echo "Done."
-
 printf "Removing unnecessary source and test files..."
 rm CONTRIBUTING.md
 rm LICENSE.md
 rm README.md
 rm -rf .github
+rm -rf src
 rm -rf tests
 echo "Done."
 
 printf "Ignoring GitHub specific files and deployment script..."
-svn propset --quiet svn:ignore ".codeclimate.yml
+svn propset --quiet svn:ignore ".editorconfig
+.eslintignore
+.eslintrc.js
 .git
 .gitignore
-.travis.yml
+.nvmrc
 composer.json
 composer.lock
 deploy.sh
-gulpfile.js
-package.json
+jest-unit.config.js
 package-lock.json
+package.json
 phpcs.xml.dist
 phpmd.xml.dist
-phpunit.integration.xml.dist
-phpunit.xml.dist" .
+phpunit.xml.dist
+webpack.config.js" .
 echo "Done."
 
 printf "Adding new files..."
