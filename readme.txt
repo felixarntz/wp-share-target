@@ -64,7 +64,8 @@ You can also contribute to the plugin by translating it. Simply visit [translate
 
 == Screenshots ==
 
-TODO.
+1. Sharing media and text from a notes app on the phone directly into a WordPress site about cocktails
+2. The shared content from the other screenshot as initially displayed in the block editor, with only one click left to publish
 
 == Changelog ==
 
