@@ -25,14 +25,25 @@ class Editor implements Registerable {
 	protected $context;
 
 	/**
+	 * Dependencies and version data for the editor script.
+	 *
+	 * @since 1.0.0
+	 * @var array
+	 */
+	protected $script_data;
+
+	/**
 	 * Constructor.
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param Context $context The plugin context.
+	 * @param Context $context     The plugin context.
+	 * @param array   $script_data Dependencies and version data for the editor script. If not provided, it will try to
+	 *                             read the built asset PHP file.
 	 */
-	public function __construct( Context $context ) {
-		$this->context = $context;
+	public function __construct( Context $context, array $script_data = array() ) {
+		$this->context     = $context;
+		$this->script_data = $script_data;
 	}
 
 	/**
@@ -57,13 +68,15 @@ class Editor implements Registerable {
 			return;
 		}
 
-		$script_data = require $this->context->path( 'build/index.asset.php' );
+		if ( ! $this->script_data ) {
+			$this->script_data = require $this->context->path( 'build/index.asset.php' );
+		}
 
 		wp_enqueue_script(
 			'share-target',
 			$this->context->url( 'build/index.js' ),
-			$script_data['dependencies'],
-			$script_data['version'],
+			$this->script_data['dependencies'],
+			$this->script_data['version'],
 			true
 		);
 		wp_set_script_translations( 'share-target', 'share-target' );
