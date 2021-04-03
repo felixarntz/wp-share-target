@@ -38,8 +38,8 @@ class Editor implements Registerable {
 	 * @since 1.0.0
 	 *
 	 * @param Context $context     The plugin context.
-	 * @param array   $script_data Dependencies and version data for the editor script. If not provided, it will try to
-	 *                             read the built asset PHP file.
+	 * @param array   $script_data Optional. Dependencies and version data for the editor script. If not provided, it
+	 *                             will try to read the built asset PHP file.
 	 */
 	public function __construct( Context $context, array $script_data = array() ) {
 		$this->context     = $context;

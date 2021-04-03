@@ -11,6 +11,8 @@
 define( 'TESTS_PLUGIN_DIR', dirname( dirname( dirname( __DIR__ ) ) ) );
 
 require_once TESTS_PLUGIN_DIR . '/vendor/autoload.php';
+// Load extra dummy class which replaces a PWA class for tests.
+require_once __DIR__ . '/dummy-wp-service-worker-scripts.php';
 
 if ( false !== getenv( 'WP_PLUGIN_DIR' ) ) {
 	define( 'WP_PLUGIN_DIR', getenv( 'WP_PLUGIN_DIR' ) );

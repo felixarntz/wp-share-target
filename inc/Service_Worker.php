@@ -27,14 +27,24 @@ class Service_Worker implements Registerable {
 	protected $context;
 
 	/**
+	 * Plugin-relative path to the service worker script to use.
+	 *
+	 * @since 1.0.0
+	 * @var string
+	 */
+	protected $sw_file;
+
+	/**
 	 * Constructor.
 	 *
 	 * @since 1.0.0
 	 *
 	 * @param Context $context The plugin context.
+	 * @param string  $sw_file Optional. Plugin-relative path to the service worker script to use.
 	 */
-	public function __construct( Context $context ) {
+	public function __construct( Context $context, string $sw_file = 'build/sw.js' ) {
 		$this->context = $context;
+		$this->sw_file = $sw_file;
 	}
 
 	/**
@@ -64,7 +74,7 @@ class Service_Worker implements Registerable {
 					);
 
 					// phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
-					$script = file_get_contents( $this->context->path( 'build/sw.js' ) );
+					$script = file_get_contents( $this->context->path( $this->sw_file ) );
 					$script = preg_replace( '#/\*\s*global.+?\*/#s', '', $script );
 
 					return preg_replace_callback(
