@@ -61,12 +61,19 @@ class Plugin_Tests extends Test_Case {
 		$this->assertSame( 'https://wordpress.org/plugins/pwa/', $matches[1] );
 
 		// Then, test for admin user.
-		$user_id = $this->factory()->user->create( array( 'role' => 'administrator' ) );
-		wp_set_current_user( $user_id );
+		wp_set_current_user( $this->create_administrator_user() );
 		ob_start();
 		do_action( 'admin_notices' );
 		$output = ob_get_clean();
 		$this->assertSame( 1, preg_match( '/href="([^"]+)"/', $output, $matches ) );
 		$this->assertSame( 'http://example.org/wp-admin/plugin-install.php?s=pwa&amp;tab=search&amp;type=term', $matches[1] );
+	}
+
+	protected function create_administrator_user() {
+		$user_id = $this->factory()->user->create( array( 'role' => 'administrator' ) );
+		if ( is_multisite() ) {
+			grant_super_admin( $user_id );
+		}
+		return $user_id;
 	}
 }
